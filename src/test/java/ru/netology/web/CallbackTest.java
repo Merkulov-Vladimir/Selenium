@@ -45,7 +45,7 @@ public class CallbackTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79838882288");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.cssSelector("[type=button]")).click();
-        String text = driver.findElement(By.className("Success_successBlock__2L3Cw")).getText();
+        String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
         assertEquals("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.", text.trim());
     }
 
@@ -55,7 +55,7 @@ public class CallbackTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79838882288");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.cssSelector("[type=button]")).click();
-        String text = driver.findElement(By.className("input__sub")).getText();
+        String text = driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub")).getText();
         assertEquals("Поле обязательно для заполнения", text.trim());
     }
 
@@ -75,7 +75,7 @@ public class CallbackTest {
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79838882288");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.cssSelector("[type=button]")).click();
-        String text = driver.findElement(By.className("input__sub")).getText();
+        String text = driver.findElement(By.cssSelector("[data-test-id=name].input_invalid .input__sub")).getText();
         assertEquals("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы.", text.trim());
     }
 
